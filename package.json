@@ -1,0 +1,16 @@
+{
+	"name": "tinkoff-test",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "gulp dev"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.27.7",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-pug": "^5.0.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"sass": "^1.49.0"
+	}
+}

@@ -1,0 +1,236 @@
+body {
+  font: 15px/24px normal, Roboto, sans-serif;
+  color: #333333;
+}
+@media only screen and (min-width: 1280px) {
+  body {
+    /* > 1280 */
+    font-size: 17px;
+    line-height: 28px;
+  }
+}
+
+.article {
+  border: 1px solid #DCE2E8;
+  margin: 80px 16px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .article {
+    /* 768-1023 */
+    margin: 80px;
+    max-width: 784px;
+    padding: 48px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .article {
+    /* > 1280 */
+    max-width: 784px;
+    margin: 80px 200px;
+    padding: 48px;
+  }
+}
+.article__header p {
+  color: #808C9E;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+.article__content {
+  margin-top: 40px;
+}
+@media only screen and (min-width: 1280px) {
+  .article__content {
+    /* > 1280 */
+    margin-top: -10px;
+  }
+}
+.article__cash img {
+  margin: 0 8px;
+}
+.article__cash h2 a {
+  color: #597DB3;
+  text-decoration: none;
+  border-bottom: 1px solid #597DB3;
+  display: inline-block;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #111111;
+  margin: 0 0 12px;
+}
+@media only screen and (min-width: 1280px) {
+  h1 {
+    /* > 1280 */
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 30px;
+  }
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 28px;
+  margin: 36px 0 16px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  h2 {
+    /* 768-1023 */
+    margin: 48px 0 12px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  h2 {
+    /* > 1280 */
+    font-size: 28px;
+    line-height: 32px;
+    margin: 48px 0 16px;
+  }
+}
+
+p {
+  margin: 0 0 16px;
+}
+@media only screen and (min-width: 1280px) {
+  p {
+    /* > 1280 */
+    margin-bottom: 24px;
+  }
+}
+
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 1280px) {
+  ul li {
+    /* > 1280 */
+    margin-bottom: 24px;
+  }
+}
+ul li span {
+  float: left;
+  margin: -2px 3px 0 0;
+}
+
+.article-header {
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 768px) {
+  .article-header {
+    /* > 768 */
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.article-header .rubric {
+  background-color: #FFDD2D;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 3px 10px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .article-header .rubric {
+    /* 768-1023 */
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .article-header .rubric {
+    /* > 1280 */
+    margin-bottom: 12px;
+  }
+}
+.article-header__tags span {
+  color: #808C9E;
+  background-color: #F1F3F5;
+  display: inline-block;
+}
+@media only screen and (max-width: 767px) {
+  .article-header__tags span:not(:last-child) {
+    /* < 767 */
+    margin-bottom: 12px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .article-header__tags span:not(:last-child) {
+    /* > 768 */
+    margin: 0 12px 12px 0;
+  }
+}
+.article-header__avatar .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #F1F3F5;
+  border-radius: 50%;
+}
+
+.author {
+  display: flex;
+  align-items: flex-start;
+  margin: 28px 0 34px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .author {
+    /* 768-1023 */
+    margin-bottom: 44px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .author {
+    /* > 1280 */
+    margin-bottom: 42px;
+  }
+}
+.author__avatar {
+  background-color: #F1F3F5;
+  border-radius: 50%;
+  min-width: 64px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+.author__name {
+  color: #808C9E;
+}
+.author__name p {
+  margin-bottom: 0;
+  line-height: 20px;
+  max-width: 200px;
+}
+.author__name strong {
+  color: #333333;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-footer {
+    /* > 768 */
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.article-footer__editor {
+  color: #808C9E;
+  margin-bottom: 4px;
+}
+.article-footer a {
+  color: #597DB3;
+  text-decoration: none;
+  border-bottom: 1px solid #597DB3;
+}
+/*# sourceMappingURL=maps/main-style.css.map */
