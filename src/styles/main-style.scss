@@ -1,0 +1,271 @@
+$portrait: 768px;
+$landscape: 1280px;
+
+@mixin responsive($media) {
+	@if $media == mobile {
+		@media only screen and (max-width: $portrait - 1) { /* < 767 */
+			@content;
+		}
+	}
+	@if $media == portrait {
+		@media only screen and (min-width: $portrait) and (max-width: $landscape - 1) { /* 768-1023 */
+			@content;
+		}
+	}
+	@else if $media == portraitdesktop {
+		@media only screen and (min-width: $portrait) { /* > 768 */
+			@content;
+		}
+	}
+	@else if $media == landscape {
+		@media only screen and (min-width: $landscape) { /* > 1280 */
+			@content;
+		}
+	}
+}
+
+$text: #333333;
+$text-second: #808C9E;
+$link: #597DB3;
+$bg-light: #F1F3F5;
+
+
+body {
+	font: 15px/24px normal, Roboto, sans-serif;
+	color: $text;
+	
+	@include responsive(landscape) {
+		font-size: 17px;
+		line-height: 28px;
+	}
+}
+
+.article {
+	border: 1px solid #DCE2E8;
+	margin: 80px 16px;
+	padding: 24px;
+	box-sizing: border-box;
+
+	@include responsive(portrait) {
+		margin: 80px;
+		max-width: 784px;
+		padding: 48px;
+	}
+
+	@include responsive(landscape) {
+		max-width: 784px;
+		margin: 80px 200px;
+		padding: 48px;
+	}
+	
+	&__header {
+		p {
+			color: $text-second;
+			line-height: 24px;
+			margin-bottom: 8px;
+		}
+	}
+	
+	&__content {
+		margin-top: 40px;
+		
+		@include responsive(landscape) {
+			margin-top: -10px;
+		}
+	}
+	
+	&__cash {
+		@include responsive(landscape) {
+			margin-top: 72px;
+		}
+
+		img {
+			margin: 0 8px;
+		}
+
+		h2 {
+			a {
+				color: $link;
+				text-decoration: none;
+				border-bottom: 1px solid $link;
+				display: inline-block;
+			}
+		}
+		
+		li {
+			margin-bottom: 17px;
+		}
+	}
+}
+
+h1 {
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+	color: #111111;
+	margin: 0 0 12px;
+	
+	@include responsive(landscape) {
+		font-size: 36px;
+		line-height: 44px;
+		margin-bottom: 30px;
+	}
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 28px;
+	margin: 36px 0 16px;
+	
+	@include responsive(portrait) {
+		margin: 48px 0 12px;
+	}
+	
+	@include responsive(landscape) {
+		font-size: 28px;
+		line-height: 32px;
+		margin: 48px 0 16px;
+		letter-spacing: -0.2px;
+	}
+}
+
+p {
+	margin: 0 0 16px;
+	
+	@include responsive(landscape) {
+		margin-bottom: 24px;
+	}
+}
+
+ul {
+	padding: 0;
+	
+	li {
+		list-style: none;
+		line-height: 24px;
+		margin-bottom: 16px;
+		
+		@include responsive(landscape) {
+			margin-bottom: 24px;
+			line-height: 28px;
+		}
+		
+		span {
+			float: left;
+			margin: -2px 3px 0 0;
+		}
+	}
+}
+
+.article-header {
+	margin-bottom: 12px;
+	
+	@include responsive(portraitdesktop) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.rubric {
+		background-color: #FFDD2D;
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 20px;
+		padding: 3px 10px;
+		margin-bottom: 16px;
+		display: inline-block;
+		
+		@include responsive(portrait) {
+			margin-bottom: 10px;
+		}
+		
+		@include responsive(landscape) {
+			margin-bottom: 12px;
+		}
+	}
+	
+	&__tags {
+		span {
+			color: $text-second;
+			background-color: $bg-light;
+			display: inline-block;
+			
+			&:not(:last-child) {
+				margin: 0 12px 12px 0;
+			}
+		}
+	}
+	
+	&__avatar {
+		.avatar {
+			width: 80px;
+			height: 80px;
+			background-color: $bg-light;
+			border-radius: 50%;
+		}
+	}
+}
+
+.author {
+	display: flex;
+	align-items: flex-start;
+	margin: 28px 0 34px;
+	
+	@include responsive(portrait) {
+		margin-bottom: 44px;
+	}
+	
+	@include responsive(landscape) {
+		margin-bottom: 42px;
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	&__avatar {
+		background-color: $bg-light;
+		border-radius: 50%;
+		min-width: 64px;
+		min-height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 16px;
+	}
+	
+	&__name {
+		color: $text-second;
+		p {
+			margin-bottom: 0;
+			line-height: 20px;
+			max-width: 200px;
+		}
+		
+		strong {
+			color: $text;
+			display: block;
+		}
+	}
+}
+
+.article-footer {
+	@include responsive(portraitdesktop) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@include responsive(landscape) {
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	&__editor {
+		color: $text-second;
+		margin-bottom: 4px;
+	}
+	
+	a {
+		color: $link;
+		text-decoration: none;
+		border-bottom: 1px solid $link;
+	}
+}

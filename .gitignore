@@ -1,6 +1,5 @@
 .idea/
 node_modules/
 build/css/maps/
-src/
 .DS_Store
 src/.DS_Store
